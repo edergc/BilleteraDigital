@@ -1,0 +1,75 @@
+<!--
+  Este es el componente hijo. Solo se encarga del formulario.
+  No guarda el saldo ni la lista: eso lo maneja el padre.
+  Cuando el usuario registra algo, se lo avisamos al padre con output().
+-->
+
+<div class="card border-2 rounded-3 shadow-sm" style="border-color:#0d6efd;">
+
+  <!-- Encabezado del hijo, igual que en el mockup -->
+  <div class="card-header text-white fw-bold" style="background-color:#0d6efd;">
+    NuevoMovimientoComponent (hijo)
+  </div>
+
+  <div class="card-body">
+
+    <div class="row g-3 mb-3">
+
+      <!-- Campo Tipo. Solo dos opciones: Recarga y Gasto. -->
+      <div class="col-md-6">
+        <label class="form-label small fw-semibold text-muted">Tipo</label>
+        <select
+          class="form-select"
+          [ngModel]="tipo()"
+          (ngModelChange)="tipo.set($event)">
+          <option value="Recarga">Recarga</option>
+          <option value="Gasto">Gasto</option>
+        </select>
+      </div>
+
+      <!-- Campo Monto -->
+      <div class="col-md-6">
+        <label class="form-label small fw-semibold text-muted">Monto (S/)</label>
+        <input
+          type="number"
+          class="form-control"
+          min="0"
+          step="0.01"
+          placeholder="0.00"
+          [ngModel]="monto()"
+          (ngModelChange)="monto.set(+$event)" />
+      </div>
+
+    </div>
+
+    <!--
+      Requisito 4: el botón se deshabilita con [disabled] cuando
+      el gasto supera el saldo, o cuando el monto está vacío.
+      Usamos la señal computada puedeRegistrar().
+    -->
+    <button
+      type="button"
+      class="btn btn-upn w-100 fw-semibold py-2"
+      [disabled]="!puedeRegistrar()"
+      (click)="registrar()">
+      Agregar movimiento
+    </button>
+
+    <!--
+      Requisito 4: si el gasto supera el saldo, mostramos un mensaje
+      con @if. Solo aparece cuando mostrarError() es true.
+    -->
+    @if (mostrarError()) {
+      <div class="alert alert-danger mt-3 mb-0 py-2 small">
+        El gasto no puede superar el saldo disponible
+        (S/ {{ saldo().toFixed(2) }}).
+      </div>
+    }
+
+    <!-- Texto de ayuda, igual al mockup -->
+    <p class="text-muted small mt-3 mb-0 text-center fst-italic">
+      Deshabilitado si el gasto supera el saldo
+    </p>
+
+  </div>
+</div>

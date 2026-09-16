@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+/* Solo un ajuste puntual: el amarillo institucional de la UPN,
+   que no viene en Bootstrap. Todo lo demás es Bootstrap puro. */
+
+:root {
+  --upn-yellow: #F5A800;
+  --upn-yellow-dark: #d99400;
+  --upn-black: #1A1A1A;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--upn-black);
+}
+
+.bg-upn        { background-color: var(--upn-yellow) !important; }
+.text-upn      { color: var(--upn-yellow) !important; }
+.btn-upn       { background-color: var(--upn-yellow); color: var(--upn-black); font-weight: 600; border: none; }
+.btn-upn:hover { background-color: var(--upn-yellow-dark); color: var(--upn-black); }
