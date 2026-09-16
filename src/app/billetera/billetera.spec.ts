@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Billetera } from './billetera';
+import { BilleteraComponent } from './billetera';
 
-describe('Billetera', () => {
-  let component: Billetera;
-  let fixture: ComponentFixture<Billetera>;
+describe('BilleteraComponent', () => {
+  let component: BilleteraComponent;
+  let fixture: ComponentFixture<BilleteraComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Billetera],
+      imports: [BilleteraComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Billetera);
+    fixture = TestBed.createComponent(BilleteraComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

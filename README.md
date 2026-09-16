@@ -124,7 +124,7 @@ billetera-digital/
 | 3 | Padre agrega el movimiento al recibirlo | `billetera.html` + `billetera.ts` | ✅ |
 | 4 | Gasto > saldo → botón deshabilitado (`[disabled]`) | `nuevo-movimiento.html` | ✅ |
 | 4 | Mensaje de error con `@if` | `nuevo-movimiento.html` | ✅ |
-| 5 | Todo con Bootstrap, sin CSS personalizado (solo el amarillo UPN) | `styles.css` | ✅ |
+| 5 | Todo con Bootstrap, sin CSS personalizado | `styles.css` | ✅ |
 
 ---
 
@@ -228,17 +228,18 @@ Deberías ver:
 
 ---
 
-## 🎨 Colores usados (identidad UPN)
+## 🎨 Estilos y apariencia
 
-| Color | Código | Uso |
-|-------|--------|-----|
-| 🟡 Amarillo UPN | `#F5A800` | Botones principales, marca |
-| ⚫ Negro UPN | `#1A1A1A` | Textos, header |
-| 🟢 Verde | `#198754` | Recargas |
-| 🔴 Rojo | `#DC3545` | Gastos |
+Todo el diseño se resuelve con **clases de Bootstrap 5**, respetando el mockup de referencia del examen:
 
-> El único ajuste fuera de Bootstrap es el amarillo institucional de la UPN, porque no viene en la paleta estándar de Bootstrap. Todo lo demás se resuelve con clases Bootstrap (`card`, `btn`, `form-control`, `badge`, etc.).
+- 🔲 **Header del padre**: fondo oscuro (`bg-dark`) con el nombre `BilleteraComponent (padre)`.
+- 🔲 **Card del hijo**: borde y cabecera azul (`#0d6efd`) con el nombre `NuevoMovimientoComponent (hijo)`.
+- 🟢 **Recargas**: badge y monto en verde (`bg-success` / `text-success`).
+- 🔴 **Gastos**: badge y monto en rojo (`bg-danger` / `text-danger`).
+- 🟡 **Botón "Agregar movimiento"**: color institucional UPN (`#F5A800`).
+- 🖼️ **Logo UPN**: se muestra en el header, cargado desde `public/logo.png`.
 
+> El único ajuste CSS fuera de Bootstrap es el amarillo institucional del botón, declarado en `styles.css`. Todo lo demás viene directamente de clases Bootstrap.
 
 ---
 
@@ -251,6 +252,6 @@ Uso exclusivamente educativo. 🎓
 
 <div align="center">
 
-**Hecho con 🟡 por el Grupo 9 — UPN 2026**
+**Hecho por el Grupo 9 — UPN 2026 🟡**
 
 </div>

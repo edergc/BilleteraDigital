@@ -1,7 +1,5 @@
 <!--
   Requisito 5: todo el diseño con clases de Bootstrap.
-  Solo el color institucional UPN (bg-upn / text-upn) va en styles.css
-  porque no existe en Bootstrap.
 -->
 
 <div class="container py-4" style="max-width: 720px;">
@@ -9,7 +7,7 @@
   <!-- ============ Card del PADRE ============ -->
   <div class="card border-2 border-dark rounded-3 shadow-sm mb-4">
 
-    <!-- Encabezado para que se vea de qué componente es -->
+    <!-- Informa qué componente es -->
     <div class="card-header bg-dark text-white fw-bold">
       BilleteraComponent (padre)
     </div>
@@ -39,7 +37,7 @@
             <div class="card border-0 shadow-sm">
               <div class="card-body py-2 px-3">
 
-                <!-- Primera fila: badge del tipo + monto -->
+                <!-- Primera fila: tipo de movimiento y el monto -->
                 <div class="d-flex justify-content-between align-items-center">
                   <span
                     class="badge rounded-pill"
@@ -69,7 +67,7 @@
         </div>
       }
 
-      <!-- Texto guía como en el mockup (es solo referencia visual) -->
+      <!-- Texto guía sacado del mackup de ejemplo -->
       <p class="text-muted small mb-0 font-monospace">
         &#64;for (m of movimientos; track m.id) &#123; ... &#125;
       </p>
@@ -78,7 +76,7 @@
   </div>
 
   <!--
-    Requisito 2 + 3:
+    Requisito 2 y 3:
       [saldo]="saldo()"                  → input()  (Property Binding)
       (nuevoMovimiento)="..."            → output() (Event Binding)
   -->
@@ -86,7 +84,7 @@
     [saldo]="saldo()"
     (nuevoMovimiento)="agregarMovimiento($event)" />
 
-  <!-- Footer del grupo -->
+  <!-- Footer del grupo y curso -->
   <footer class="text-center text-muted small mt-4 mb-3">
     <p class="mb-0">
       <strong>GRUPO 9</strong> · Soluciones Web y Aplicaciones Distribuidas

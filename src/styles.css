@@ -1,6 +1,3 @@
-/* Solo un ajuste puntual: el amarillo institucional de la UPN,
-   que no viene en Bootstrap. Todo lo demás es Bootstrap puro. */
-
 :root {
   --upn-yellow: #F5A800;
   --upn-yellow-dark: #d99400;
